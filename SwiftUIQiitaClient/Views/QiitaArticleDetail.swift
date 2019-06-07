@@ -9,15 +9,16 @@
 import SwiftUI
 
 struct QiitaArticleDetail : View {
+    let articleURL: URL
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        WebView(url: articleURL)
     }
 }
 
 #if DEBUG
 struct QiitaArticleDetail_Previews : PreviewProvider {
     static var previews: some View {
-        QiitaArticleDetail()
+        QiitaArticleDetail(articleURL: URL(string: "https://qiita.com")!)
     }
 }
 #endif

@@ -13,7 +13,7 @@ struct QiitaArticleList : View {
     var body: some View {
         NavigationView {
             List(viewModel.articles) { article in
-                NavigationButton(destination: QiitaArticleDetail()) {
+                NavigationButton(destination: QiitaArticleDetail(articleURL: article.url)) {
                     QiitaArticleRow(article: article)
                         .environmentObject(self.viewModel)
                 }

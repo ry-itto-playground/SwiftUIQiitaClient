@@ -22,14 +22,16 @@ struct QiitaArticleRow : View {
                     .foregroundColor(Color.green)
                 Text(article.title)
                     .bold()
+                    .lineLimit(3)
+                Spacer()
             }
             
             Spacer()
             
             HStack {
-                Image(systemName: "star.fill")
+                Image(systemName: "heart.fill")
                     .imageScale(.small)
-                    .foregroundColor(Color.yellow)
+                    .foregroundColor(Color.red)
                 Text(("\(article.reactionsCount)"))
                     .font(.subheadline)
                 Spacer()

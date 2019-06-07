@@ -19,6 +19,7 @@
 		BF54020D22A9932300C4A00F /* QiitaArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54020C22A9932300C4A00F /* QiitaArticleListViewModel.swift */; };
 		BF54020F22A9969800C4A00F /* QiitaArticleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54020E22A9969800C4A00F /* QiitaArticleRow.swift */; };
 		BF54021422A9A76900C4A00F /* QiitaArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54021322A9A76900C4A00F /* QiitaArticleDetail.swift */; };
+		BFACD2E322AA51BB0088F6C4 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFACD2E222AA51BB0088F6C4 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		BF54020C22A9932300C4A00F /* QiitaArticleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleListViewModel.swift; sourceTree = "<group>"; };
 		BF54020E22A9969800C4A00F /* QiitaArticleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleRow.swift; sourceTree = "<group>"; };
 		BF54021322A9A76900C4A00F /* QiitaArticleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaArticleDetail.swift; sourceTree = "<group>"; };
+		BFACD2E222AA51BB0088F6C4 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				BF54021322A9A76900C4A00F /* QiitaArticleDetail.swift */,
 				BF54020A22A9930100C4A00F /* QiitaArticleList.swift */,
 				BF54020E22A9969800C4A00F /* QiitaArticleRow.swift */,
+				BFACD2E222AA51BB0088F6C4 /* WebView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				BF54020422A9727F00C4A00F /* QiitaData.swift in Sources */,
 				BF54020D22A9932300C4A00F /* QiitaArticleListViewModel.swift in Sources */,
 				BF54020722A9740E00C4A00F /* QiitaAPIClient.swift in Sources */,
+				BFACD2E322AA51BB0088F6C4 /* WebView.swift in Sources */,
 				BF5401EF22A9717500C4A00F /* AppDelegate.swift in Sources */,
 				BF54020F22A9969800C4A00F /* QiitaArticleRow.swift in Sources */,
 				BF54020B22A9930100C4A00F /* QiitaArticleList.swift in Sources */,
