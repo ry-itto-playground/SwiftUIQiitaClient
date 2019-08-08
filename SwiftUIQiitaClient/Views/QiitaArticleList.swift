@@ -9,12 +9,12 @@
 import SwiftUI
 
 struct QiitaArticleList : View {
-    @EnvironmentObject var viewModel: QiitaArticleListViewModel
+    @ObservedObject var viewModel: QiitaArticleListViewModel
     var body: some View {
         NavigationView {
             List(viewModel.articles) { article in
-                NavigationButton(destination: QiitaArticleDetail(articleURL: article.url)) {
-                    QiitaArticleRow(article: article)
+                NavigationLink(destination: QiitaArticleDetail(articleURL: article.url)) {
+                    QiitaArticleRow(viewModel: QiitaArticleListViewModel(), article: article)
                         .environmentObject(self.viewModel)
                 }
             }
@@ -26,8 +26,7 @@ struct QiitaArticleList : View {
 #if DEBUG
 struct QiitaArticleList_Previews : PreviewProvider {
     static var previews: some View {
-        QiitaArticleList()
-            .environmentObject(QiitaArticleListViewModel())
+        QiitaArticleList(viewModel: QiitaArticleListViewModel())
     }
 }
 #endif

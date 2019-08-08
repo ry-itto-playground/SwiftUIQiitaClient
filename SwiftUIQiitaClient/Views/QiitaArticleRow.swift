@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct QiitaArticleRow : View {
-    @EnvironmentObject var viewModel: QiitaArticleListViewModel
+    @ObservedObject var viewModel: QiitaArticleListViewModel
     
     let article: QiitaData.Article
     
@@ -18,7 +18,6 @@ struct QiitaArticleRow : View {
             HStack {
                 Image(systemName: "book")
                     .imageScale(.medium)
-                    .font(.title)
                     .foregroundColor(Color.green)
                 Text(article.title)
                     .bold()
@@ -37,7 +36,7 @@ struct QiitaArticleRow : View {
                 Spacer()
                 Text("by @\(article.user.id)")
                     .font(.caption)
-                    .color(.gray)
+                    .foregroundColor(.gray)
                     .fontWeight(Font.Weight.light)
             }
         }
@@ -47,8 +46,7 @@ struct QiitaArticleRow : View {
 #if DEBUG
 struct QiitaArticleRow_Previews : PreviewProvider {
     static var previews: some View {
-        QiitaArticleRow(article: QiitaArticleListViewModel().articles[0])
-            .environmentObject(QiitaArticleListViewModel())
+        QiitaArticleRow(viewModel: QiitaArticleListViewModel(), article: QiitaArticleListViewModel().articles[0])
     }
 }
 #endif

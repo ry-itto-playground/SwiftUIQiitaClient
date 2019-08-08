@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		BF5401EF22A9717500C4A00F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5401EE22A9717500C4A00F /* AppDelegate.swift */; };
 		BF5401F122A9717500C4A00F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5401F022A9717500C4A00F /* SceneDelegate.swift */; };
-		BF5401F322A9717500C4A00F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5401F222A9717500C4A00F /* ContentView.swift */; };
 		BF5401F522A9717800C4A00F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5401F422A9717800C4A00F /* Assets.xcassets */; };
 		BF5401F822A9717900C4A00F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5401F722A9717900C4A00F /* Preview Assets.xcassets */; };
 		BF5401FB22A9717900C4A00F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5401F922A9717900C4A00F /* LaunchScreen.storyboard */; };
@@ -26,7 +25,6 @@
 		BF5401EB22A9717500C4A00F /* SwiftUIQiitaClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIQiitaClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5401EE22A9717500C4A00F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF5401F022A9717500C4A00F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BF5401F222A9717500C4A00F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BF5401F422A9717800C4A00F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF5401F722A9717900C4A00F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BF5401FA22A9717900C4A00F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 				BF54020522A973FF00C4A00F /* API */,
 				BF5401EE22A9717500C4A00F /* AppDelegate.swift */,
 				BF5401F422A9717800C4A00F /* Assets.xcassets */,
-				BF5401F222A9717500C4A00F /* ContentView.swift */,
 				BF54021022A9981400C4A00F /* Extensions */,
 				BF5401FC22A9717900C4A00F /* Info.plist */,
 				BF5401F922A9717900C4A00F /* LaunchScreen.storyboard */,
@@ -216,7 +213,6 @@
 				BF54020B22A9930100C4A00F /* QiitaArticleList.swift in Sources */,
 				BF5401F122A9717500C4A00F /* SceneDelegate.swift in Sources */,
 				BF54021422A9A76900C4A00F /* QiitaArticleDetail.swift in Sources */,
-				BF5401F322A9717500C4A00F /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

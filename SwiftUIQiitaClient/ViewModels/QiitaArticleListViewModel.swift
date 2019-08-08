@@ -9,13 +9,13 @@
 import Combine
 import SwiftUI
 
-final class QiitaArticleListViewModel: BindableObject {
-    let didChange = PassthroughSubject<QiitaArticleListViewModel, Never>()
+final class QiitaArticleListViewModel: ObservableObject {
+    let willChange = PassthroughSubject<QiitaArticleListViewModel, Never>()
     
     private(set) var articles: [QiitaData.Article] = [] {
         didSet {
             DispatchQueue.main.async {
-                self.didChange.send(self)
+                self.willChange.send(self)
             }
         }
     }
