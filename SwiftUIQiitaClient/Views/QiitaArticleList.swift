@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct QiitaArticleList : View {
-    @ObservedObject var viewModel: QiitaArticleListViewModel
+    @ObservedObject(initialValue: QiitaArticleListViewModel()) var viewModel: QiitaArticleListViewModel
+    
     var body: some View {
         NavigationView {
             List(viewModel.articles) { article in
@@ -26,7 +27,7 @@ struct QiitaArticleList : View {
 #if DEBUG
 struct QiitaArticleList_Previews : PreviewProvider {
     static var previews: some View {
-        QiitaArticleList(viewModel: QiitaArticleListViewModel())
+        QiitaArticleList()
     }
 }
 #endif

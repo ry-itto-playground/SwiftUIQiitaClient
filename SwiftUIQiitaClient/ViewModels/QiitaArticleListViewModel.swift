@@ -9,13 +9,13 @@
 import Combine
 import SwiftUI
 
-final class QiitaArticleListViewModel: ObservableObject {
-    let willChange = PassthroughSubject<QiitaArticleListViewModel, Never>()
+final class QiitaArticleListViewModel: ObservableObject, Identifiable {
+    var objectWillChange: ObservableObjectPublisher = ObservableObjectPublisher()
     
     private(set) var articles: [QiitaData.Article] = [] {
         didSet {
             DispatchQueue.main.async {
-                self.willChange.send(self)
+                self.objectWillChange.send()
             }
         }
     }
@@ -26,7 +26,7 @@ final class QiitaArticleListViewModel: ObservableObject {
             case .success(let articles):
                 self.articles = articles
             case .failure:
-                break
+                fatalError("fetch error")
             }
         }
     }
