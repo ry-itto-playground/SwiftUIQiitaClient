@@ -10,6 +10,8 @@ import Combine
 import SwiftUI
 
 final class QiitaArticleListViewModel: ObservableObject, Identifiable {
+    
+    private var cancellables: Set<AnyCancellable> = []
     var objectWillChange: ObservableObjectPublisher = ObservableObjectPublisher()
     
     private(set) var articles: [QiitaData.Article] = [] {
@@ -21,13 +23,16 @@ final class QiitaArticleListViewModel: ObservableObject, Identifiable {
     }
     
     init() {
-        QiitaAPIClient.fetchArticles(query: "Swift") { (result) in
-            switch result {
-            case .success(let articles):
+        QiitaAPIClient.fetchArticles(query: "Swift")
+            .sink(receiveCompletion: { fail in
+                switch fail {
+                case .failure(let e):
+                    print(e.localizedDescription)
+                case .finished:
+                    print("finished")
+                }
+            }) { articles in
                 self.articles = articles
-            case .failure:
-                fatalError("fetch error")
-            }
-        }
+            }.store(in: &cancellables)
     }
 }

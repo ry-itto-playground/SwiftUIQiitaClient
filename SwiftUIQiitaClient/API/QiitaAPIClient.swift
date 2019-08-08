@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 final class QiitaAPIClient {
     
@@ -17,8 +18,9 @@ final class QiitaAPIClient {
     ///     - page: 何ページ分か, default=1
     ///     - perPage: 1ページごとの記事数, default=20
     ///     - query: 検索クエリ, 必須
-    ///     - completion: 終了時処理
-    static func fetchArticles(page: Int = 1, perPage: Int = 20, query: String, completion: @escaping (Result<[QiitaData.Article], Error>) -> ()) {
+    /// - Returns:
+    ///     検索結果Publisher
+    static func fetchArticles(page: Int = 1, perPage: Int = 20, query: String) -> AnyPublisher<[QiitaData.Article], Error> {
         var components = URLComponents(string: "https://qiita.com/api/v2/items")!
         components.queryItems = [
             URLQueryItem(name: "page", value: "\(page)"),
@@ -34,18 +36,9 @@ final class QiitaAPIClient {
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
         
-        let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-            do {
-                let decoded = try decoder.decode([QiitaData.Article].self, from: data!)
-                completion(.success(decoded))
-            } catch let e {
-                completion(.failure(e))
-            }
-        }
-        task.resume()
+        return URLSession.shared.dataTaskPublisher(for: request)
+            .map { $0.data }
+            .decode(type: [QiitaData.Article].self, decoder: decoder)
+            .eraseToAnyPublisher()
     }
 }
