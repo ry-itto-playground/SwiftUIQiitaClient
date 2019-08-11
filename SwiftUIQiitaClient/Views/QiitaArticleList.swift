@@ -15,7 +15,7 @@ struct QiitaArticleList : View {
         NavigationView {
             List(viewModel.articles) { article in
                 NavigationLink(destination: QiitaArticleDetail(articleURL: article.url)) {
-                    QiitaArticleRow(viewModel: QiitaArticleListViewModel(), article: article)
+                    QiitaArticleRow(viewModel: self.viewModel, article: article)
                         .environmentObject(self.viewModel)
                 }
             }

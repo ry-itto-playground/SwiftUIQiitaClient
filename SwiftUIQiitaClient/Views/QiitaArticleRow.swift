@@ -15,17 +15,15 @@ struct QiitaArticleRow : View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
+            HStack { 
                 Image(systemName: "book")
                     .imageScale(.medium)
                     .foregroundColor(Color.green)
                 Text(article.title)
                     .bold()
                     .lineLimit(3)
-                Spacer()
             }
-            
-            Spacer()
+            .layoutPriority(1)
             
             HStack {
                 Image(systemName: "heart.fill")
